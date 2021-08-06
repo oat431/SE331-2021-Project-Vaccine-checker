@@ -2,8 +2,8 @@
 
 team memebers
 
-- 622115039
+- Sahachan Tippimwong 622115039 (Oralita)[https://github.com/oat431]
 
-- 622115040
+- Dian Jin 622115040
 
-- 622115503
+- Suchanun Sirijanya 622115503
