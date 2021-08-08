@@ -1,19 +1,11 @@
 <template>
-    <metainfo>
-        <template v-slot:title="{ content }">
-            {{ content ? `${content} | ${siteName}` : siteName }}
-        </template>
-    </metainfo>
+    <NavBar />
     <router-view />
 </template>
 
-<script setup>
-import { useMeta } from 'vue-meta'
-
-const siteName = 'Vite App'
-
-useMeta({
-    title: '',
-    htmlAttrs: { lang: 'en', amp: true },
-})
+<script>
+import NavBar from './components/NavBar.vue'
+export default {
+    components:{ NavBar }
+}
 </script>

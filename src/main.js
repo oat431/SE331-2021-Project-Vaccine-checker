@@ -7,5 +7,5 @@ import './index.css'
 
 const app = createApp(App).use(router).use(store).use(createMetaManager())
 
-await router.isReady()
+//await router.isReady()
 app.mount('#app')
