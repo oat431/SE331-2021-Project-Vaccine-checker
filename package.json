@@ -1,7 +1,7 @@
 {
     "version": "0.0.0",
     "scripts": {
-        "dev": "vite",
+        "dev": "concurrently \"json-server --watch db.json --port 3001\" \"vite\"",
         "build": "vite build",
         "serve": "vite preview"
     },
