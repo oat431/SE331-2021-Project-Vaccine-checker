@@ -1,9 +1,9 @@
-# SE331 Term Project
+# SE331 Term Project 🛠
 
-team memebers
+## team memebers 🌿
 
-- Sahachan Tippimwong 622115039 [Oralita](https://github.com/oat431)
+- **1st member:** Sahachan Tippimwong 622115039 **GitHub Account:** [Oralita](https://github.com/oat431) 🍁
 
-- Dian Jin 622115040
-
-- Suchanun Sirijanya 622115503
+- **2nd member:** Suchanun Sirijanya 622115040 🍂
+  
+- **3rd member:** Dian Jin 622115503 **GitHub Account:** [MichaelJin3](https://github.com/MichaelJin3) 🍎
