@@ -1,11 +1,12 @@
 {
     "version": "0.0.0",
     "scripts": {
-        "dev": "vite",
+        "dev": "concurrently \"json-server --watch db.json --port 3001\" \"vite\"",
         "build": "vite build",
         "serve": "vite preview"
     },
     "dependencies": {
+        "axios": "^0.21.1",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-vue": "^7.13.0",
         "prettier": "^2.3.2",
@@ -17,6 +18,8 @@
     "devDependencies": {
         "@vitejs/plugin-vue": "^1.2.4",
         "@vue/compiler-sfc": "^3.0.5",
+        "@vue/cli-plugin-router": "~4.5.0",
+        "@vue/cli-plugin-vuex": "~4.5.0",
         "autoprefixer": "^10.3.0",
         "postcss": "^8.3.5",
         "tailwindcss": "^2.2.4",
