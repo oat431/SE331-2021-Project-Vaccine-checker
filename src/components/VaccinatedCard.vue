@@ -1,9 +1,27 @@
 <template>
-    <div class="vaccinated-card">
-        <img src="">
-        <h4>Name: {{vaccinated.name}} {{vaccinated.surname}}</h4>
-        <span>1st: Covid Vaccine: {{vaccinated.vaccine.title}}</span>
-    </div>
+    <router-link :to="{name:'Vaccinated', params: { id: '123' } }">
+        <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+            <img class="object-cover w-full h-56" :src="vaccinated.image" alt="avatar">
+            <div class="py-5 text-center">
+                <a href="#" class="block text-2xl font-bold text-gray-800 dark:text-white">{{vaccinated.name}} {{vaccinated.surname}}</a>
+                <span 
+                  v-if="vaccinated.vaccine.length == 1" 
+                  class="text-sm text-gray-700 dark:text-gray-200">
+                    only got 1 dose 
+                </span>
+                <span 
+                  v-else-if="vaccinated.vaccine.length == 2" 
+                  class="text-sm text-gray-700 dark:text-gray-200">
+                    already got 2 dose 
+                </span>
+                <span 
+                  v-else-if="vaccinated.vaccine.length == 3" 
+                  class="text-sm text-gray-700 dark:text-gray-200">
+                    got 3 dose (booster) 
+                </span>
+            </div>
+        </div>
+    </router-link>
 </template>
 
 <script>
