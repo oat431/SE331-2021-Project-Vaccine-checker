@@ -1,18 +1,65 @@
+<script>
+export default {
+   data(){
+       return {
+           toggle:false,
+           doctors:[
+               "Dr. Roger",
+               "Dr. Lipton",
+               "Dr. SomChai",
+               "Dr. Lillie",
+               "Dr. Light"
+           ]
+       }
+   }, 
+   methods: {
+       show(){
+           this.toggle = !this.toggle
+       }
+   },
+}
+</script>
 <template>
-    <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <ul class="flex">
-                <li class="mr-6">
-                    <router-link class="text-blue-500 hover:text-blue-800" to="/">Home</router-link>
-                </li>
-                <li class="mr-6">
-                    <router-link class="text-blue-500 hover:text-blue-800" to="/about">About</router-link>
-                </li>
-                <li class="mr-6">
-                    <a href="#contract">Contract us</a>
-                    <!-- <a class="text-blue-500 hover:text-blue-800" href="https://oat431.github.io">Contract me</a> -->
-                </li>
-            </ul>
+    <nav class="bg-white shadow dark:bg-gray-800">
+        <div class="container px-6 py-4 mx-auto">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex items-center justify-between">
+                    <div class="text-xl font-semibold text-gray-700">
+                        <a class="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">SE331</a>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="flex md:hidden">
+                        <button type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                            <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                                <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+                <div class="flex-1 md:flex md:items-center md:justify-between">
+                    <div class="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8">
+                        <router-link to="/" class="px-2 py-1 mx-2 mt-2 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700">Home</router-link>
+                        <router-link to="/about" class="px-2 py-1 mx-2 mt-2 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700">About</router-link>
+                    </div>
+
+                    <div class="flex items-center mt-4 md:mt-0 relative">
+                        <button class="relative z-10 block p-2 bg-white rounded-md dark:bg-gray-800" @click="show">
+                           Doctor Login 
+                        </button>
+
+        <!-- Dropdown menu -->
+                        <div v-if="toggle" class="absolute right-0 z-20 w-48 py-4 md:mt-60 bg-white rounded-md shadow-xl dark:bg-gray-800">
+                            <router-link v-for="doctor in doctors" :key="doctor" to="/doctor" @click="show" 
+                            class="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white">
+                                 Login as {{ doctor }} 
+                            </router-link>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
 </template>
