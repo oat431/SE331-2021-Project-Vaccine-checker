@@ -71,6 +71,7 @@ export default {
                 })
         })
     },
+
     // beforeRouterEnter(routeTo, routeFrom, next) {
     //     VaccinatedService.getVaccinatedPeople(6, parseInt(routeTo.query.page) || 1)
     //         .then((response) => {
@@ -85,7 +86,7 @@ export default {
     //             console.log('err')
     //         })
     // },
-    // // eslint-disable-next-line no-unused-vars
+
     // beforeRouterUpdate(routeTo, routeFrom, next) {
     //     VaccinatedService.getVaccinatedPeople(6, parseInt(routeTo.query.page) || 1)
 

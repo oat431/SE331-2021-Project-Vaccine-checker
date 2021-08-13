@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{name:'Vaccinated', params: { id: '123' } }">
+    <router-link :to="{name:'Vaccinated', params: { id: vaccinated.id } }">
         <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
             <img class="object-cover w-full h-56" :src="vaccinated.image" alt="avatar">
             <div class="py-5 text-center">
