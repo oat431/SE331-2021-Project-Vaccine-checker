@@ -1,3 +1,6 @@
 import { reactive } from 'vue'
 
-export default reactive({ flashMessage: '', details: null ,vaccinatedPerson:null, vaccine:true, info:true }, { flashEdit: '' })
+export default reactive(
+    { flashMessage: '', details: null, vaccinatedPerson: null, isdoctor:false, doctorName:'',doctorComment:[] },
+    { flashEdit: '' }
+)

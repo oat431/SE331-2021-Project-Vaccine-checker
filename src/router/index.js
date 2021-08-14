@@ -16,6 +16,10 @@ const routes = [
         name: 'Home',
         component: Home,
         props: (route) => ({ page: parseInt(route.query.page) || 1 }),
+        beforeEnter: ()=>{
+            GlobalState.isdoctor = false 
+            GlobalState.doctorName = '' 
+        }
     },
     {
         path: '/about',
@@ -30,6 +34,12 @@ const routes = [
         beforeEnter: (to) => {
             return vaccineAPI.getVaccinatedPerson(to.params.id).then((res) => {
                 GlobalState.vaccinatedPerson = res.data
+                for(let item of GlobalState.doctorComment){
+                    if(item.id == GlobalState.vaccinatedPerson.id) {
+                        console.log(item)
+                        GlobalState.vaccinatedPerson.doctor_comment.push(item)       
+                    }
+                }
             }).catch((err)=>{
                 console.log(err)
             })
@@ -53,6 +63,16 @@ const routes = [
         ]
         
     },
+    {
+        path: '/doctor/:name',
+        name: 'Doctor',
+        component: Home,
+        props: (route) => ({ page: parseInt(route.query.page) || 1 }),
+        beforeEnter: (to)=>{
+            GlobalState.isdoctor = true
+            GlobalState.doctorName = to.params.name
+        }
+    }
 ]
 
 const router = createRouter({
