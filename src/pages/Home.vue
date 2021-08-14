@@ -81,35 +81,6 @@ export default {
                 })
         })
     },
-
-    // beforeRouterEnter(routeTo, routeFrom, next) {
-    //     VaccinatedService.getVaccinatedPeople(6, parseInt(routeTo.query.page) || 1)
-    //         .then((response) => {
-    //             console.log(info.vaccinatedPeople)
-    //             next((info) => {
-    //                 info.vaccinatedPeople = response.data
-    //                 info.totalPeople = response.headers['x-total-count']
-    //                 console.log(info.vaccinatedPeople)
-    //             })
-    //         })
-    //         .catch(() => {
-    //             console.log('err')
-    //         })
-    // },
-
-    // beforeRouterUpdate(routeTo, routeFrom, next) {
-    //     VaccinatedService.getVaccinatedPeople(6, parseInt(routeTo.query.page) || 1)
-
-    //         .then((response) => {
-    //             this.vaccinatedPeople = response.data
-    //             this.totalPeople = response.headers['x-total-count']
-    //             console.log(this.vaccinatedPeople)
-    //             next()
-    //         })
-    //         .catch(() => {
-    //             console.log('err')
-    //         })
-    // },
     computed: {
         hasNextPage() {
             let totalPages = Math.ceil(this.totalPeople / 3) // 2 is events per page
