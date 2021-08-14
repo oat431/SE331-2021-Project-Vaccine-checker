@@ -25,32 +25,22 @@ export default {
             <div class="md:flex md:items-center md:justify-between">
                 <div class="flex items-center justify-between">
                     <div class="text-xl font-semibold text-gray-700">
-                        <a class="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">SE331</a>
-                    </div>
-
-                    <!-- Mobile menu button -->
-                    <div class="flex md:hidden">
-                        <button type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
-                            <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-                                <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
-                            </svg>
-                        </button>
+                        <router-link class="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" to="/">SE331</router-link>
                     </div>
                 </div>
 
                 <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
                 <div class="flex-1 md:flex md:items-center md:justify-between">
-                    <div class="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8">
-                        <router-link to="/" class="px-2 py-1 mx-2 mt-2 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700">Home</router-link>
-                        <router-link to="/about" class="px-2 py-1 mx-2 mt-2 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700">About</router-link>
+                    <div class="flex flex-row -mx-4 md:flex-row md:items-center md:mx-8">
+                        <router-link to="/" class="px-2 py-1 mx-2 mt-2 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 hover:bg-gray-300">Home</router-link>
+                        <router-link to="/about" class="px-2 py-1 mx-2 mt-2 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 hover:bg-gray-300">About</router-link>
+                        
                     </div>
 
-                    <div class="flex items-center mt-4 md:mt-0 relative">
+                    <div class="flex items-right mt-4 md:mt-0 relative">
                         <button class="relative z-10 block p-2 bg-white rounded-md dark:bg-gray-800" @click="show">
                            Doctor Login 
                         </button>
-
-        <!-- Dropdown menu -->
                         <div v-if="toggle" class="absolute right-0 z-20 w-48 py-4 md:mt-60 bg-white rounded-md shadow-xl dark:bg-gray-800">
                             <router-link v-for="doctor in doctors" :key="doctor" to="/doctor" @click="show" 
                             class="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white">
