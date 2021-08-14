@@ -1,37 +1,25 @@
+<script>
+export default {
+    props:['vaccinatedPerson'], 
+}
+</script>
+<template>
+    <div class="max-w-4xl flex items-center flex-wrap mx-auto my-0 lg:my-0">
 
-  <!-- <div v-if="vaccinated">
-      <h2>ID: {{vaccinated.id}}</h2>
-    <h3>Name: {{ vaccinated.name }} </h3>
-    <h3>Surname: {{vaccinated.surname}}</h3>
-    <h3>Birthday: {{vaccinated.birthday}}</h3>
-    <h3>Sex: {{vaccinated.sex}}</h3>
-    <h3>Hometown: {{vaccinated.hometown}}</h3> -->
+        <div class="w-full lg:w-80">
+            <img :src="this.vaccinatedPerson.image" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block" />
+        </div>
 
+        <!--Main Col-->
+        <div id="profile"
+            class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
 
-    <!-- <div  v-for="x in passenger.airline" :key="x.id">
-      <span> Airline: {{ x.name }}</span>
-    </div>
-  </div>
-</template> -->
+            <div class="p-4 md:p-12 text-center lg:text-left">
+                <img class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" :src="this.vaccinatedPerson.image"/>
 
-<!-- // <script>
-// import vaccineAPI from '../services/vaccineAPI.js'
-// export default {
-//   props: ['id'],
-//   data() {
-//     return {
-//       vaccinated: null
-//     }
-//   },
-//   created() {
-//     vaccineAPI.getVaccinatedPerson(this.id)
-//       .then((response) => {
-//         console.log(response)
-//         this.vaccinated = response.data
-//       })
-//       .catch((error) => {
-//         console.log(error)
-//       })
-//   }
-// }
-// </script> -->
+                <router-view :vaccinatedPerson="vaccinatedPerson"/>
+            </div>
+        </div>
+    </div>  
+
+</template>

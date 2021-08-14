@@ -3,6 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import About from '../pages/About.vue'
 import VaccinatedInfo from '../pages/VaccinatedInfo.vue'
+import VaccinatedProfileCard from '../components/VaccinatedProfileCard.vue'
+import VaccinatedVaccineCard from '../components/VaccinatedVaccineCard.vue'
+import VaccinatedAllInfo from '../components/VaccinatedAllInfo.vue'
 import NProgress from 'nprogress'
 import vaccineAPI from '../services/vaccineAPI.js'
 import GlobalState from '../store/index'
@@ -31,6 +34,24 @@ const routes = [
                 console.log(err)
             })
         },
+        children:[
+            {
+                path:'',
+                name:'VaccinatedAllInfo',
+                component: VaccinatedAllInfo,
+            },
+            {
+                path:'info',
+                name:'VaccinatedInfo',
+                component: VaccinatedProfileCard,
+            },
+            {
+                path:'vaccine',
+                name:'VaccinatedVaccine',
+                component: VaccinatedVaccineCard,
+            }
+        ]
+        
     },
 ]
 

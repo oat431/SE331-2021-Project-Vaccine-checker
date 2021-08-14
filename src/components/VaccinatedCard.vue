@@ -3,20 +3,20 @@
         <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
             <img class="object-cover w-full h-56" :src="vaccinated.image" alt="avatar">
             <div class="py-5 text-center">
-                <a href="#" class="block text-2xl font-bold text-gray-800 dark:text-white">{{vaccinated.name}} {{vaccinated.surname}}</a>
-                <span 
+                <router-link :to="{name:'VaccinatedInfo', params: { id: vaccinated.id }}" class="block text-2xl font-bold text-gray-800 hover:text-green-500">{{vaccinated.name}} {{vaccinated.surname}}</router-link>
+                <router-link :to="{name:'VaccinatedVaccine', params: { id:vaccinated.id }}"
                   v-if="vaccinated.vaccine.length == 1" 
-                  class="text-sm text-gray-700 dark:text-gray-200">
+                  class="text-sm text-gray-700 hover:text-green-300">
                     only got 1 dose 
-                </span>
+                </router-link>
                 <span 
                   v-else-if="vaccinated.vaccine.length == 2" 
-                  class="text-sm text-gray-700 dark:text-gray-200">
+                  class="text-sm text-gray-700 hover:text-green-300">
                     already got 2 dose 
                 </span>
                 <span 
                   v-else-if="vaccinated.vaccine.length == 3" 
-                  class="text-sm text-gray-700 dark:text-gray-200">
+                  class="text-sm text-gray-700 hover:text-green-300">
                     got 3 dose (booster) 
                 </span>
             </div>

@@ -1,22 +1,27 @@
 <script>
 import DefaultLayout from '../layouts/DefaultLayout.vue'
-import VaccinatedProfileCard from '../components/VaccinatedProfileCard.vue'
+import VaccinatedDeatails from '../layouts/VaccinatedDetails.vue'
 export default {
     inject:['GlobalState'],
     components: {
         DefaultLayout,
-        VaccinatedProfileCard
+        VaccinatedDeatails
     },
 }
 </script>
 
 <template>
     <DefaultLayout>
-        <p class="text-3xl font-bold">{{GlobalState.vaccinatedPerson.name}} Infomation</p>
+        <div class="divide-x-2 divide-green-500">
+            <router-link :to="{name:'VaccinatedAllInfo'}" class="text-2xl px-2 font-medium hover:text-green-300">{{GlobalState.vaccinatedPerson.name}} </router-link>
+            <router-link :to="{name:'VaccinatedInfo'}"  class="text-2xl px-2 font-medium hover:text-green-300"> Info </router-link>
+            <router-link :to="{name:'VaccinatedVaccine'}"  class="text-2xl px-2 font-medium hover:text-green-300"> Vaccine </router-link>
+            <span></span>
+        </div>
     </DefaultLayout> 
-    <VaccinatedProfileCard :vaccinatedPerson="GlobalState.vaccinatedPerson"/>
+    <VaccinatedDeatails :vaccinatedPerson="GlobalState.vaccinatedPerson"/>
     <DefaultLayout>
-        <p class="text-3xl text-green-800">Hi I'm here How are you</p>     
+        <p class="text-3xl text-green-800">Doctor Comment</p>     
     </DefaultLayout>
 </template>
 
