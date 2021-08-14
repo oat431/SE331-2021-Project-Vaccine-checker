@@ -9,3 +9,6 @@ export default {
     components:{ NavBar }
 }
 </script>
+
+<style scoped>
+</style>

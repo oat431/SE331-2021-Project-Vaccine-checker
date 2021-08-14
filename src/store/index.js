@@ -1,15 +1,6 @@
-import { createStore, createLogger } from 'vuex'
+import { reactive } from 'vue'
 
-import user from './modules/user'
-
-const debug = process.env.NODE_ENV !== 'production'
-
-const store = createStore({
-    modules: {
-        user,
-    },
-    strict: debug,
-    plugins: debug ? [createLogger()] : [],
-})
-
-export default store
+export default reactive(
+    { flashMessage: '', details: null, vaccinatedPerson: null, isdoctor:false, doctorName:'',doctorComment:[] },
+    { flashEdit: '' }
+)

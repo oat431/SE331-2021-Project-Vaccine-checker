@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import DefaultLayout from '../layouts/Default.vue'
+import DefaultLayout from '../layouts/VaccinatedDetails.vue'
 export default {
     components:{DefaultLayout} 
 }
