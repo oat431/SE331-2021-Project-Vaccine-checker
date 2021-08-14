@@ -1,11 +1,15 @@
 <script>
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import VaccinatedDeatails from '../layouts/VaccinatedDetails.vue'
+import DoctorComment from '../components/DoctorComment.vue'
+import DoctorCommentBox from '../components/DoctorCommentBox.vue'
 export default {
     inject:['GlobalState'],
     components: {
         DefaultLayout,
-        VaccinatedDeatails
+        VaccinatedDeatails,
+        DoctorComment,
+        DoctorCommentBox
     },
 }
 </script>
@@ -19,9 +23,23 @@ export default {
             <span></span>
         </div>
     </DefaultLayout> 
+    
     <VaccinatedDeatails :vaccinatedPerson="GlobalState.vaccinatedPerson"/>
+
     <DefaultLayout>
-        <p class="text-3xl text-green-800">Doctor Comment</p>     
+        <p class="text-3xl text-green-800">Doctor Comment</p>
+    </DefaultLayout>
+
+    <DefaultLayout v-if="GlobalState.vaccinatedPerson.doctor_comment.length != 0">
+        <DoctorComment v-for="comment in GlobalState.vaccinatedPerson.doctor_comment" :key="comment.comment_date" :doctor="comment"/>
+    </DefaultLayout>
+
+    <DefaultLayout v-else>
+        <p class="flex item-center justify-center text-3xl mx-auto text-green-800">No comment yet.</p>
+    </DefaultLayout>
+
+    <DefaultLayout v-if="GlobalState.isdoctor">
+        <DoctorCommentBox />
     </DefaultLayout>
 </template>
 
