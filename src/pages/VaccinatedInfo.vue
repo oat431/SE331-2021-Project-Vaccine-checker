@@ -35,11 +35,16 @@ export default {
     </DefaultLayout>
 
     <DefaultLayout v-else>
-        <p class="flex item-center justify-center text-3xl mx-auto text-green-800">No comment yet.</p>
+        <p class="flex item-center justify-center text-1xl mx-auto text-green-800">No comment yet.</p>
+        <br />
     </DefaultLayout>
 
     <DefaultLayout v-if="GlobalState.isdoctor">
         <DoctorCommentBox />
+    </DefaultLayout>
+    <DefaultLayout v-else>
+        <p class="flex item-center justify-center text-1xl mx-auto text-green-800">You need to login as a doctor to comment on this person</p>
+        <br />
     </DefaultLayout>
 </template>
 
