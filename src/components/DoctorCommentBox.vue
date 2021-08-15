@@ -15,6 +15,10 @@ export default {
     },
     methods:{
         comment(){
+            if(this.msg.length === 0){
+                alert('you need to tell something to this person...')
+                return 
+            }
             const comment = {
                 id:this.GlobalState.vaccinatedPerson.id,
                 comment_pic: this.pic[this.GlobalState.doctorName],
@@ -39,7 +43,7 @@ export default {
             </div>
 
             <div class="flex justify-center mt-6">
-                <button class="px-4 py-2 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600" @click="comment()">Send Comment</button>
+                <button class="px-4 py-2 text-white transition-colors duration-200 transform bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600" @click="comment()">Send Comment</button>
             </div>
         </div>
     </section>
