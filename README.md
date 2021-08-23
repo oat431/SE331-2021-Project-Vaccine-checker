@@ -14,4 +14,13 @@
 | **2nd member:** | Suchanun Sirijanya | 622115040 | [Suchanunsiri](https://github.com/Suchanunsiri) |
 | **3rd member:** | Dian Jin | 622115503 | [MichaelJin3](https://github.com/MichaelJin3) |
 
-## Our project is deploy [here](http://52.73.15.237/): 52.73.15.237
+## Our project is submiited
+
+## status : abandon
+
+### instruction
+
+1. ```npm install``` for fetching dependencies
+2. ```npm run dev``` for running developement server
+3. ```npm run build``` for building the project 
+4. ```npm run serve``` for testing the building project
